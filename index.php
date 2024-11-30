@@ -39,7 +39,7 @@ $product_result = $conn->query($product_query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop - Categories</title>
+    <title>Super Shop</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
