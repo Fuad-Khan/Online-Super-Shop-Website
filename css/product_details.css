@@ -1,0 +1,227 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Global Typography */
+h2, h3, h4 {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Product Details Section */
+.product-details {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-details h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.product-details img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.product-details p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Price Styling */
+.product-details .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+    margin: 15px 0;
+}
+
+/* Form Styling */
+.product-details form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.product-details label {
+    font-weight: 600;
+    color: #333;
+}
+
+.product-details input[type="number"],
+.product-details select,
+.product-details textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+.product-details input[type="number"]:focus,
+.product-details select:focus,
+.product-details textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.product-details button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+.product-details button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Message Styling */
+.product-details .message {
+    color: green;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Links */
+.product-details a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.product-details a:hover {
+    text-decoration: underline;
+}
+
+/* Reviews Box */
+.product-details .reviews-box {
+    margin-top: 40px;
+    padding: 25px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-details .reviews-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.product-details .reviews-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.product-details .reviews-box li {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.product-details .reviews-box li:hover {
+    transform: scale(1.02);
+}
+
+.product-details .reviews-box li p {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.product-details .reviews-box li strong {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.product-details .reviews-box li .rating {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f39c12;
+}
+
+/* No reviews message */
+.product-details .reviews-box .no-reviews {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Review Form */
+.product-details .review-form {
+    margin-top: 30px;
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-details .review-form h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.product-details .review-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.product-details .review-form button {
+    background-color: #28a745;
+    font-size: 1.1rem;
+}
+
+.product-details .review-form button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}

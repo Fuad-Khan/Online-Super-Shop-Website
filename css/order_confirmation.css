@@ -1,0 +1,72 @@
+/* styles.css */
+
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header Styling */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Order Confirmation Container */
+.order-confirmation-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.order-confirmation-container h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.order-confirmation-container p {
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.order-confirmation-container h3 {
+    color: #333;
+    font-size: 22px;
+    margin: 20px 0;
+}
+
+.order-confirmation-container .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.order-confirmation-container .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

@@ -1,0 +1,373 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+header .logo h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+/* Style for the search bar container */
+.search-bar-container {
+    width: 90%; /* 90% of the page width */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add some padding inside the box */
+    background-color: #211d1d00; /* Dark background for the box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(18, 13, 13, 0.3); /* Subtle shadow for depth */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Space at the top */
+}
+
+/* Style for the search category section */
+.search-category {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure it takes up the full width of the container */
+}
+
+/* Style for the dropdown */
+.category-dropdown {
+    width: 25%; /* Adjust width of the dropdown */
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd; /* Light border */
+}
+
+/* Style for the search input field */
+.search-input {
+    width: 50%; /* Adjust input field width */
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px; /* Space between input and button */
+    border-radius: 5px;
+    border: 1px solid #0c0505; /* Light border */
+    background-color: #ffffff; /* Dark input field background */
+    color: #0f0404; /* White text color */
+}
+
+/* Style for the search button */
+#search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: rgb(93, 0, 255); /* Subtle green for the button */
+    color: #fff; /* White text color */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Add hover effect to search button */
+#search-button:hover {
+    background-color: #4c4; /* Darker green when hovered */
+}
+
+/* Hover effect for input and dropdown */
+.search-input:hover, .category-dropdown:hover {
+    border-color: #5f5; /* Light green border on hover */
+}
+
+
+/* Products Section */
+#products {
+    padding: 2rem 5%;
+    background: #fff;
+    margin-top: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#products h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.product h3 {
+    color: #333;
+    margin: 0.5rem 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.product p {
+    font-size: 1.1rem;
+    color: #777;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+
+.product-quantity {
+    width: 60px;
+    padding: 5px;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+/* Style for the Add-to-Cart form */
+.addtocart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Add spacing between input and button */
+    width: 100%; /* Ensure the form stays within the card */
+    margin-top: auto; /* Push the form to the bottom */
+}
+
+/* Quantity Input */
+.addtocart input[type="number"] {
+    width: 60px; /* Keep the input compact */
+    padding: 8px;
+    font-size: 1rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Add-to-Cart Button */
+.addtocart button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    background: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto; /* Keep it auto-sized for flexibility */
+}
+
+.addtocart button:hover {
+    background-color: #6a11cb;
+}
+
+.add-to-cart-button {
+    padding: 10px 15px;
+    background: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.add-to-cart-button:hover {
+    background-color: #6a11cb;
+}
+
+/* About Us Section */
+#about-us {
+    background-color: #f9f9f9;
+    padding: 40px 5%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#about-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#about-us p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Contact Section */
+#contact {
+    padding: 40px 5%;
+    background-color: #f9f9f9;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+
+/* General Form Styles */
+form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+form input {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+form button {
+    background: #2575fc;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background: #6a11cb;
+}
+
+/* Login & Register Containers */
+.login-container, .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+p a {
+    color: #2575fc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-bar-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .product-card {
+        padding: 0.5rem;
+    }
+
+    form {
+        width: 100%;
+        padding: 15px;
+    }
+}

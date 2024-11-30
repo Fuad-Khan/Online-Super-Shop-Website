@@ -1,0 +1,169 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h2, h3 {
+    text-align: center;
+    color: #444;
+}
+
+/* Container Styles */
+.cart-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-items {
+    margin-top: 20px;
+}
+
+/* Cart Item Styles */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.item-details {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.item-details h4 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.item-details p {
+    margin: 5px 0;
+    color: #666;
+}
+
+/* Forms and Buttons */
+form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+form label {
+    font-size: 14px;
+    color: #555;
+}
+
+form input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    opacity: 0.9;
+}
+
+/* Update Button */
+.update-form button {
+    background-color: #007bff;
+}
+
+.update-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Remove Button */
+.remove-form button {
+    background-color: #ff4d4d;
+}
+
+.remove-form button:hover {
+    background-color: #e60000;
+}
+
+/* Checkout Button */
+.checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.checkout-btn:hover {
+    background-color: #218838;
+}
+
+/* Empty Cart Message */
+.cart-container p {
+    text-align: center;
+    color: #666;
+}
+
+.cart-container p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.cart-container p a:hover {
+    text-decoration: underline;
+}
+
+/* Horizontal Divider */
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+.remove-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+    background-color: #c0392b;
+}
