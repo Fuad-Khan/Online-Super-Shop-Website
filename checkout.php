@@ -106,16 +106,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <img src="images/<?php echo $item['product']['image']; ?>" alt="<?php echo $item['product']['name']; ?>">
                 <div class="item-details">
                     <h4><?php echo $item['product']['name']; ?></h4>
-                    <p>Price: $<?php echo number_format($item['product']['price'], 2); ?></p>
+                    <p>Price: <?php echo number_format($item['product']['price'], 2); ?> Taka</p>
                     <p>Quantity: <?php echo $item['quantity']; ?></p>
-                    <p>Total: $<?php echo number_format($item['total'], 2); ?></p>
+                    <p>Total: <?php echo number_format($item['total'], 2); ?> Taka</p>
                 </div>
             </div>
             <hr>
         <?php endforeach; ?>
     </div>
 
-    <h3>Total Price: $<?php echo number_format($total_price, 2); ?></h3>
+    <h3>Total Price: <?php echo number_format($total_price, 2); ?> Taka</h3>
 
     <!-- Address and Checkout Form -->
     <form action="checkout.php" method="POST" class="checkout-form">

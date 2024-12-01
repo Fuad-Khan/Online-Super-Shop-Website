@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
 <div class="product-details">
     <h2><?php echo $product['name']; ?></h2>
     <img src="images/<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>">
-    <p><strong>Price:</strong> $<?php echo number_format($product['price'], 2); ?></p>
+    <p><strong>Price:</strong> <?php echo number_format($product['price'], 2); ?> Taka</p>
     <p><?php echo $product['description']; ?></p>
 
     <!-- Add to Cart Form -->

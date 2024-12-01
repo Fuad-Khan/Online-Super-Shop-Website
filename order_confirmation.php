@@ -45,7 +45,7 @@ if ($order_id) {
     <h3>Order ID: <?php echo $order['order_id']; ?></h3>
     <p>Status: <?php echo $order['status']; ?></p>
     <p>Shipping Address: <?php echo htmlspecialchars($order['shipping_address']); ?></p>
-    <p>Total Price: $<?php echo number_format($order['total_price'], 2); ?></p>
+    <p>Total Price: <?php echo number_format($order['total_price'], 2); ?> Taka</p>
 
     <a href="index.php" class="btn">Continue Shopping</a>
 </div>

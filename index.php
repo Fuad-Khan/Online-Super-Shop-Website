@@ -81,7 +81,7 @@ $product_result = $conn->query($product_query);
                     <!-- Product Body -->
                     <div class="product-body">
                         <p><?php echo $product['description']; ?></p>
-                        <p><strong>$<?php echo number_format($product['price'], 2); ?> Taka</strong></p>
+                        <p><strong><?php echo number_format($product['price'], 2); ?> Taka</strong></p>
 
                         <!-- Add-to-Cart Form -->
                         <form class="addtocart" action="add_to_cart.php" method="POST">

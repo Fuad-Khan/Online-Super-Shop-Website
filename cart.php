@@ -91,14 +91,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['checkout'])) {
             <img src="images/<?php echo $item['product']['image']; ?>" alt="<?php echo $item['product']['name']; ?>">
             <div class="item-details">
                 <h4><?php echo $item['product']['name']; ?></h4>
-                <p>Price: $<?php echo number_format($item['product']['price'], 2); ?></p>
+                <p>Price: <?php echo number_format($item['product']['price'], 2); ?> Taka</p>
                 <form action="cart.php" method="POST" class="update-form">
                     <input type="hidden" name="product_id" value="<?php echo $item['product']['product_id']; ?>">
                     <label for="quantity-<?php echo $item['product']['product_id']; ?>">Quantity:</label>
                     <input type="number" id="quantity-<?php echo $item['product']['product_id']; ?>" name="quantity" value="<?php echo $item['quantity']; ?>" min="1">
                     <button type="submit" name="update_quantity">Update</button>
                 </form>
-                <p>Total: $<?php echo number_format($item['total'], 2); ?></p>
+                <p>Total: <?php echo number_format($item['total'], 2); ?> Taka</p>
                 <form action="cart.php" method="POST" class="remove-form">
                     <input type="hidden" name="product_id" value="<?php echo $item['product']['product_id']; ?>">
                     <button type="submit" name="remove_item" class="remove-btn">Remove</button>
@@ -110,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['checkout'])) {
 </div>
 
 
-        <h3>Total Price: $<?php echo number_format($total_price, 2); ?></h3>
+        <h3>Total Price: <?php echo number_format($total_price, 2); ?> Taka</h3>
 
         <form action="cart.php" method="POST">
             <button type="submit" name="checkout" class="checkout-btn">Proceed to Checkout</button>
