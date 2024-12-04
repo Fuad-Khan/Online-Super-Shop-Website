@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_to_cart'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $product['name']; ?> - Product Details</title>
-    <link rel="stylesheet" href="styles.css">
+    
     <link rel="stylesheet" href="css/product_details.css">
 </head>
 <body>

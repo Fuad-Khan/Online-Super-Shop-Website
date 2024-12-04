@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['checkout'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart - MyOnlineShop</title>
-    <link rel="stylesheet" href="styles.css">
+   
     <link rel="stylesheet" href="css/cart.css">
 </head>
 <body>
