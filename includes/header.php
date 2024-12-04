@@ -25,7 +25,7 @@ if ($conn->connect_error) {
 <!-- Header Section -->
 <header>
     <div class="logo">
-        <h1><a href="index.php">MyOnlineShop</a></h1>
+        <h1><a href="index.php">TakeItEasy Shop</a></h1>
     </div>
     <nav>
         <a href="cart.php">Cart</a>

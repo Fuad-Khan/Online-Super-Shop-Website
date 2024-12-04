@@ -1,26 +1,41 @@
 /* Header */
 header {
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background: linear-gradient(to right, #9136f3, #2575fc);
     color: white;
     padding: 20px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 3px solid #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    width: 100%; /* Ensures header spans the full width */
 }
 
+/* Logo */
 header .logo h1 {
     font-size: 2.5rem;
     font-weight: bold;
     color: white;
     margin: 0;
+    text-align: center;
+    flex: 1 1 100%; /* Full width on smaller screens */
 }
 
+/* Remove underline from the logo link */
+header .logo h1 a {
+    text-decoration: none; /* Removes underline from the logo */
+    color: white; /* Ensures the logo link is white */
+}
+
+/* Navigation */
 nav {
     display: flex;
     gap: 20px;
+    flex: 1; /* Ensures the nav takes up appropriate space */
+    justify-content: flex-end; /* Aligns items to the right */
+    flex-wrap: wrap; /* Allows wrapping for narrow screens */
 }
 
 nav a {
@@ -31,9 +46,60 @@ nav a {
     border-radius: 5px;
     font-weight: bold;
     transition: background 0.3s ease, transform 0.3s ease;
+    text-align: center;
 }
 
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.4);
     transform: scale(1.05);
+}
+
+nav a:focus {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack logo and navigation vertically */
+        padding: 15px 5%;
+        text-align: center; /* Ensures header items are centered */
+    }
+
+    header .logo h1 {
+        font-size: 2rem; /* Smaller font size for smaller screens */
+    }
+
+    nav {
+        justify-content: center; /* Center navigation links on smaller screens */
+        gap: 15px; /* Slightly reduced gap */
+    }
+
+    nav a {
+        padding: 8px 15px; /* Adjust padding for smaller links */
+        font-size: 0.9rem; /* Smaller font size */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 5%;
+    }
+
+    header .logo h1 {
+        font-size: 1.8rem; /* Further reduce font size */
+    }
+
+    nav {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px;
+        width: 100%; /* Ensure the navigation is full width */
+        align-items: center; /* Center the items in the column layout */
+    }
+
+    nav a {
+        padding: 10px; /* Compact padding for very small screens */
+        font-size: 0.85rem;
+    }
 }

@@ -84,6 +84,7 @@ h1, h2, h3, p {
 }
 
 
+
 /* Products Section */
 #products {
     padding: 2rem 5%;
@@ -132,11 +133,18 @@ h1, h2, h3, p {
     margin-bottom: 1rem;
 }
 
-.product h3 {
+
+.product-card a h3 {
+     /* Removes underline from the logo */
     color: #333;
     margin: 0.5rem 0;
     font-size: 1.8rem;
-    font-weight: bold;
+    font-weight: bold; /* Ensures the logo link is white */
+
+}
+
+#products .product-list a {
+    text-decoration: none;
 }
 
 .product p {

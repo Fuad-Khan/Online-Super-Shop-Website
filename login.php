@@ -22,10 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['role'] = $user['role'];
             header("Location: index.php"); // Redirect to the homepage or dashboard
         } else {
-            echo "Invalid credentials!";
+            echo "Invalid Password!";
         }
     } else {
-        echo "User not found!";
+        echo "Invalid Email Address";
     }
 }
 ?>

@@ -1,11 +1,7 @@
 <?php
 session_start(); // Start the session
 // Database connection
-$host = "localhost";
-$username = "root";
-$password = "";
-$dbname = "shop_db";
-$conn = new mysqli($host, $username, $password, $dbname);
+include('includes/db_connection.php');
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -29,6 +25,9 @@ if ($category_id) {
 if ($search_query) {
     $product_query .= " AND (name LIKE '%$search_query%' OR description LIKE '%$search_query%')";
 }
+
+// Add randomness to the query
+$product_query .= " ORDER BY RAND()";
 
 $product_result = $conn->query($product_query);
 ?>
@@ -66,6 +65,8 @@ $product_result = $conn->query($product_query);
             <button type="button" id="search-button" onclick="searchProducts()">Search</button>
         </div>
     </div>
+
+    
 
     <div id="products">
         <h2>Products</h2>
