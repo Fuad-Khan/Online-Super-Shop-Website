@@ -247,62 +247,7 @@ h1, h2, h3, p {
     line-height: 1.8;
 }
 
-/* Footer */
-footer {
-    background: #333;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    margin-top: 40px;
-}
 
-
-
-/* General Form Styles */
-form {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-form input,
-form button {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-form input {
-    border: 1px solid #ddd;
-    margin: 10px 0;
-}
-
-form button {
-    background: #2575fc;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-form button:hover {
-    background: #6a11cb;
-}
-
-/* Login & Register Containers */
-.login-container, .register-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-p a {
-    color: #2575fc;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {

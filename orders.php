@@ -46,7 +46,7 @@ $orders_result = $conn->query($orders_query);
                 <?php while ($order = $orders_result->fetch_assoc()): ?>
                     <tr>
                         <td><?php echo $order['order_id']; ?></td>
-                        <td>$<?php echo number_format($order['total_price'], 2); ?></td>
+                        <td><?php echo number_format($order['total_price'], 2); ?> Taka</td>
                         <td><?php echo htmlspecialchars($order['status']); ?></td>
                         <td><?php echo htmlspecialchars($order['shipping_address']); ?></td>
                         <td><?php echo $order['created_at']; ?></td>
