@@ -7,29 +7,35 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: #f5f5f5;
+    background: #fafafa;
     color: #333;
     line-height: 1.6;
     font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
+/* Heading Styles */
 h1, h2, h3, p {
     margin: 0;
 }
 
-
 /* Style for the search bar container */
 .search-bar-container {
-    width: 90%; /* 90% of the page width */
-    margin: 0 auto; /* Center the container horizontally */
-    padding: 20px; /* Add some padding inside the box */
-    background-color: #211d1d00; /* Dark background for the box */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(18, 13, 13, 0.3); /* Subtle shadow for depth */
+    width: 90%;
+    
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px; /* Space at the top */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.search-bar-container:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 /* Style for the search category section */
@@ -37,28 +43,39 @@ h1, h2, h3, p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* Ensure it takes up the full width of the container */
+    width: 100%;
 }
 
 /* Style for the dropdown */
 .category-dropdown {
-    width: 25%; /* Adjust width of the dropdown */
+    width: 25%;
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
-    border: 1px solid #ddd; /* Light border */
+    border: 1px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+
+.category-dropdown:focus {
+    border-color: #4e73df;
+    outline: none;
 }
 
 /* Style for the search input field */
 .search-input {
-    width: 50%; /* Adjust input field width */
+    width: 50%;
     padding: 10px;
     font-size: 16px;
-    margin-right: 10px; /* Space between input and button */
+    margin-right: 10px;
     border-radius: 5px;
-    border: 1px solid #0c0505; /* Light border */
-    background-color: #ffffff; /* Dark input field background */
-    color: #0f0404; /* White text color */
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #4e73df;
+    outline: none;
 }
 
 /* Style for the search button */
@@ -67,35 +84,28 @@ h1, h2, h3, p {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    border: 1px solid #ddd;
-    background-color: rgb(93, 0, 255); /* Subtle green for the button */
-    color: #fff; /* White text color */
-    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    border: 1px solid #4e73df;
+    background-color: #4e73df;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Add hover effect to search button */
 #search-button:hover {
-    background-color: #4c4; /* Darker green when hovered */
+    background-color: #365fdb;
+    transform: scale(1.05);
 }
-
-/* Hover effect for input and dropdown */
-.search-input:hover, .category-dropdown:hover {
-    border-color: #5f5; /* Light green border on hover */
-}
-
-
 
 /* Products Section */
 #products {
-    padding: 2rem 5%;
+    padding: 3rem 5%;
     background: #fff;
     margin-top: 40px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 #products h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 1.5rem;
     color: #333;
 }
@@ -105,13 +115,14 @@ h1, h2, h3, p {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    justify-items: center;
 }
 
 .product-card {
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
@@ -122,7 +133,7 @@ h1, h2, h3, p {
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .product-img {
@@ -131,20 +142,27 @@ h1, h2, h3, p {
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 1rem;
+    transition: transform 0.3s ease;
 }
 
+.product-img:hover {
+    transform: scale(1.05);
+}
+
+.product-card a {
+    text-decoration: none; /* Remove underline from the link */
+}
 
 .product-card a h3 {
-     /* Removes underline from the logo */
     color: #333;
     margin: 0.5rem 0;
     font-size: 1.8rem;
-    font-weight: bold; /* Ensures the logo link is white */
-
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-#products .product-list a {
-    text-decoration: none;
+.product-card a h3:hover {
+    color: #4e73df; /* Change color on hover */
 }
 
 .product p {
@@ -154,27 +172,18 @@ h1, h2, h3, p {
     line-height: 1.5;
 }
 
-
-.product-quantity {
-    width: 60px;
-    padding: 5px;
-    font-size: 1rem;
-    margin-right: 10px;
-}
-
 /* Style for the Add-to-Cart form */
 .addtocart {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* Add spacing between input and button */
-    width: 100%; /* Ensure the form stays within the card */
-    margin-top: auto; /* Push the form to the bottom */
+    gap: 10px;
+    width: 100%;
+    margin-top: auto;
 }
 
-/* Quantity Input */
 .addtocart input[type="number"] {
-    width: 60px; /* Keep the input compact */
+    width: 60px;
     padding: 8px;
     font-size: 1rem;
     text-align: center;
@@ -182,7 +191,6 @@ h1, h2, h3, p {
     border-radius: 5px;
 }
 
-/* Add-to-Cart Button */
 .addtocart button {
     padding: 10px 15px;
     font-size: 1rem;
@@ -191,41 +199,29 @@ h1, h2, h3, p {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: auto; /* Keep it auto-sized for flexibility */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .addtocart button:hover {
     background-color: #6a11cb;
-}
-
-.add-to-cart-button {
-    padding: 10px 15px;
-    background: #2575fc;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-    margin-top: 15px;
-    width: 100%;
-}
-
-.add-to-cart-button:hover {
-    background-color: #6a11cb;
+    transform: scale(1.05);
 }
 
 /* About Us Section */
 #about-us {
     background-color: #f9f9f9;
-    padding: 40px 5%;
+    padding: 50px 5%;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#about-us:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 #about-us h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 20px;
     color: #333;
 }
@@ -238,14 +234,19 @@ h1, h2, h3, p {
 
 /* Contact Section */
 #contact {
-    padding: 40px 5%;
+    padding: 50px 5%;
     background-color: #f9f9f9;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#contact:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 #contact h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 20px;
 }
 
@@ -255,23 +256,16 @@ h1, h2, h3, p {
     line-height: 1.8;
 }
 
-
-
 /* Responsive Design */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav {
-        flex-direction: column;
-        gap: 10px;
-    }
-
     .search-bar-container {
         flex-direction: column;
         gap: 10px;
+        padding: 15px;
+    }
+
+    .search-input, .category-dropdown {
+        width: 100%;
     }
 
     .product-list {
@@ -279,11 +273,14 @@ h1, h2, h3, p {
     }
 
     .product-card {
-        padding: 0.5rem;
+        padding: 1rem;
     }
 
-    form {
+    .addtocart button {
         width: 100%;
-        padding: 15px;
+    }
+
+    #products h2, #about-us h2, #contact h2 {
+        font-size: 2rem;
     }
 }

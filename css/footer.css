@@ -7,65 +7,83 @@
 
 /* Body Style */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f0f0f0; /* Light gray background */
+    background-color: #f4f6f9; /* Light gray background */
     color: #333;
+  
 }
 
 /* About Us Section */
 #about-us {
-    background-color: #ffffff; /* Bright yellow background */
+    background-color: #ffffff;
     padding: 40px;
     margin-bottom: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: transform 0.3s ease;
+}
+
+#about-us:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
 }
 
 #about-us h2 {
+    font-size: 2em;
     color: #2c3e50;
+    margin-bottom: 20px;
 }
 
 #about-us p {
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: #7f8c8d;
+    line-height: 1.8;
 }
 
 /* Contact Section */
 #contact {
-    background-color: #fffefd; /* Red background */
+    background-color: #ffffff;
     padding: 40px;
     margin-bottom: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #contact h2 {
-    color: #000000;
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 20px;
 }
 
 #contact p {
-    font-size: 1.1em;
-    color: #000000;
+    font-size: 1.2em;
+    color: #7f8c8d;
+    line-height: 1.8;
 }
 
 #contact a {
     color: #3498db;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 #contact a:hover {
+    color: #190588;
     text-decoration: underline;
-    color: #190588; /* Blue hover effect */
+    transform: scale(1.05); /* Slight scaling effect */
 }
 
 /* Footer */
 footer {
-    background-color: #2c3e50; /* Dark blue background */
+    background-color: #2c3e50;
     color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 30px;
     position: relative;
     width: 100%;
     bottom: 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer p {
@@ -74,24 +92,24 @@ footer p {
 
 /* Social Media Links */
 .social-media {
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 .social-media a {
     color: #fff;
     margin: 0 15px;
     text-decoration: none;
-    font-size: 1.8em;
-    transition: color 0.3s ease-in-out;
+    font-size: 2em;
+    transition: color 0.3s ease-in-out, transform 0.3s ease;
 }
 
 .social-media a:hover {
-    color: #cd34db; /* Blue hover effect */
+    transform: scale(1.1); /* Slight enlarge on hover */
 }
 
 /* Social Media Specific Colors */
 .social-media a:nth-child(1):hover {
-    color: #823b98;  /* Instagram Pink */ 
+    color: #823b98;  /* Instagram Pink */
 }
 
 .social-media a:nth-child(2):hover {
@@ -108,4 +126,45 @@ footer p {
 
 .social-media a:nth-child(5):hover {
     color: #0496ff; /* Twitter Blue */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #about-us, #contact {
+        padding: 20px;
+    }
+
+    #about-us h2, #contact h2 {
+        font-size: 1.8em;
+    }
+
+    #about-us p, #contact p {
+        font-size: 1em;
+    }
+
+    .social-media a {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 20px;
+    }
+
+    #about-us, #contact {
+        padding: 15px;
+    }
+
+    #about-us h2, #contact h2 {
+        font-size: 1.6em;
+    }
+
+    #about-us p, #contact p {
+        font-size: 0.9em;
+    }
+
+    footer p {
+        font-size: 1em;
+    }
 }

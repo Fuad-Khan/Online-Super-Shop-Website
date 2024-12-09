@@ -66,7 +66,7 @@ $product_result = $conn->query($product_query);
         </div>
     </div>
 
-    
+
 
     <div id="products">
         <h2>Products</h2>
@@ -114,6 +114,15 @@ $product_result = $conn->query($product_query);
             const category_id = document.getElementById("category-dropdown").value;
             window.location.href = `index.php?category_id=${category_id}&search_query=${search_query}`;
         }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
+
+            menuToggle.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+        });
     </script>
 
 </body>

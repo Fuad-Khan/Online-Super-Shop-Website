@@ -25,25 +25,25 @@ if ($conn->connect_error) {
 <!-- Header Section -->
 <header>
     <div class="logo">
-        <h1><a href="index.php">TakeItEasy Shop</a></h1>
+        <h1><a href="index.php">Easy Shop</a></h1>
     </div>
+
     <nav>
-        <a href="cart.php">Cart</a>
-        <?php if (isset($_SESSION['user_id'])): ?>
-                <a href="orders.php">Your Orders</a></li> <!-- Link to the Orders page -->
-            <?php endif; ?>
-        <a href="#about-us">About Us</a>
-        <a href="#contact">Contact</a>
+        <a href="cart.php" class="<?= basename($_SERVER['PHP_SELF']) === 'cart.php' ? 'active' : '' ?>"><i class="fas fa-shopping-cart"></i> Cart</a>
 
         <?php if (isset($_SESSION['user_id'])): ?>
-            <!-- Show Profile and Logout if logged in -->
-            <a href="profile.php">Profile</a>
-            <a href="logout.php">Logout</a>
+            <a href="orders.php"><i class="fas fa-box"></i> Your Orders</a>
+            <a href="profile.php"><i class="fas fa-user"></i> Profile</a>
+            <a href="#about-us"><i class="fas fa-info-circle"></i> About Us</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
         <?php else: ?>
-            <!-- Show Login and Register if not logged in -->
-            <a href="login.php">Login</a>
-            <a href="register.php">Register</a>
+            <a href="#about-us"><i class="fas fa-info-circle"></i> About Us</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="login.php"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href="register.php"><i class="fas fa-user-plus"></i> Register</a>
         <?php endif; ?>
+
     </nav>
 </header>
 
