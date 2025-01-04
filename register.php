@@ -2,6 +2,8 @@
 // Include database connection
 include('includes/db_connection.php');
 
+$error_message = ""; // Initialize error message variable
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
     $name = $_POST['name'];
@@ -14,14 +16,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $conn->query($query);
 
     if ($result->num_rows > 0) {
-        echo "Email already exists!";
+        $error_message = "Email already exists!";
     } else {
         // Insert user into the database
         $insert_query = "INSERT INTO Users (name, email, password, role) VALUES ('$name', '$email', '$hashed_password', 'customer')";
         if ($conn->query($insert_query)) {
-            echo "Registration successful! You can <a href='login.php'>login</a> now.";
+            $error_message = "Registration successful! You can <a href='login.php'>login</a> now.";
         } else {
-            echo "Error: " . $conn->error;
+            $error_message = "Error: " . $conn->error;
         }
     }
 }
@@ -38,6 +40,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="register-container">
         <h2>Register</h2>
+        <?php if (!empty($error_message)): ?>
+            <div class="error-message">
+                <?php echo $error_message; ?>
+            </div>
+        <?php endif; ?>
         <form method="POST" action="">
             <input type="text" name="name" placeholder="Full Name" required><br>
             <input type="email" name="email" placeholder="Email" required><br>

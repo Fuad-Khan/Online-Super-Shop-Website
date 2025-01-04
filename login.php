@@ -3,6 +3,8 @@
 include('includes/db_connection.php');
 session_start();
 
+$error_message = ""; // Initialize error message variable
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
     $email = $_POST['email'];
@@ -21,11 +23,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['name'] = $user['name'];
             $_SESSION['role'] = $user['role'];
             header("Location: index.php"); // Redirect to the homepage or dashboard
+            exit(); // Ensure no further code is executed after redirection
         } else {
-            echo "Invalid Password!";
+            $error_message = "Invalid Password!";
         }
     } else {
-        echo "Invalid Email Address";
+        $error_message = "Invalid Email Address";
     }
 }
 ?>
@@ -45,8 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h2>Login</h2>
             </div>
             <div class="login-body">
-
-           
                 <form method="POST" action="">
                     <div class="input-group">
                         <input type="email" name="email" placeholder="Email" required>
@@ -59,11 +60,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </form>
             </div>
-            
             <div class="login-footer">
                 <p>Don't have an account? <a href="register.php">Register</a></p>
             </div>
+            <?php if (!empty($error_message)): ?>
+            <div class="error-message">
+                <?php echo $error_message; ?>
+            </div>
+        <?php endif; ?>
         </div>
+
     </div>
+
 </body>
 </html>

@@ -72,7 +72,13 @@ a:hover {
 }
 
 /* Error message styling */
-.error {
-    color: red;
-    font-size: 14px;
+.error-message {
+    background-color: #ffcccc;
+    color: #d8000c;
+    border: 1px solid #d8000c;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
 }
