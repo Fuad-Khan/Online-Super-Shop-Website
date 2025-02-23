@@ -1,35 +1,31 @@
 <?php
-// Include database connection
-include('includes/db_connection.php');
 session_start();
+include('includes/db_connection.php');
 
-$error_message = ""; // Initialize error message variable
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
-    $email = $_POST['email'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
     $password = $_POST['password'];
 
-    // Check if user exists
-    $query = "SELECT * FROM Users WHERE email = '$email'";
-    $result = $conn->query($query);
+    $stmt = $conn->prepare("SELECT user_id, name, password, role FROM Users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    if ($result->num_rows > 0) {
+    if ($result->num_rows === 1) {
         $user = $result->fetch_assoc();
-        // Verify password
+        
         if (password_verify($password, $user['password'])) {
-            // Store user data in session
             $_SESSION['user_id'] = $user['user_id'];
             $_SESSION['name'] = $user['name'];
             $_SESSION['role'] = $user['role'];
-            header("Location: index.php"); // Redirect to the homepage or dashboard
-            exit(); // Ensure no further code is executed after redirection
-        } else {
-            $error_message = "Invalid Password!";
+            header("Location: index.php");
+            exit();
         }
-    } else {
-        $error_message = "Invalid Email Address";
     }
+    
+    $_SESSION['error'] = "Invalid email or password!";
+    header("Location: login.php");
+    exit();
 }
 ?>
 
@@ -74,3 +70,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </body>
 </html>
+

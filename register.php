@@ -1,31 +1,36 @@
 <?php
-// Include database connection
+session_start();
 include('includes/db_connection.php');
 
-$error_message = ""; // Initialize error message variable
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = htmlspecialchars($_POST['name']);
+    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $address = htmlspecialchars($_POST['address']);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-    // Check if email already exists
-    $query = "SELECT * FROM Users WHERE email = '$email'";
-    $result = $conn->query($query);
-
-    if ($result->num_rows > 0) {
-        $error_message = "Email already exists!";
-    } else {
-        // Insert user into the database
-        $insert_query = "INSERT INTO Users (name, email, password, role) VALUES ('$name', '$email', '$hashed_password', 'customer')";
-        if ($conn->query($insert_query)) {
-            $error_message = "Registration successful! You can <a href='login.php'>login</a> now.";
-        } else {
-            $error_message = "Error: " . $conn->error;
-        }
+    // Check if email exists
+    $stmt = $conn->prepare("SELECT email FROM Users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    
+    if ($stmt->get_result()->num_rows > 0) {
+        $_SESSION['error'] = "Email already exists!";
+        header("Location: register.php");
+        exit();
     }
+
+    // Insert new user
+    $stmt = $conn->prepare("INSERT INTO Users (name, email, password, address) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $name, $email, $password, $address);
+    
+    if ($stmt->execute()) {
+        $_SESSION['success'] = "Registration successful! Please login.";
+        header("Location: login.php");
+    } else {
+        $_SESSION['error'] = "Registration failed: " . $conn->error;
+        header("Location: register.php");
+    }
+    exit();
 }
 ?>
 
@@ -45,12 +50,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php echo $error_message; ?>
             </div>
         <?php endif; ?>
-        <form method="POST" action="">
-            <input type="text" name="name" placeholder="Full Name" required><br>
-            <input type="email" name="email" placeholder="Email" required><br>
-            <input type="password" name="password" placeholder="Password" required><br>
-            <button type="submit">Register</button>
-        </form>
+        <form method="POST" action="register.php">
+    <input type="text" name="name" required placeholder="Full Name">
+    <input type="email" name="email" required placeholder="Email">
+    <input type="password" name="password" required placeholder="Password">
+    <textarea name="address" required placeholder="Shipping Address"></textarea>
+    <button type="submit">Register</button>
+</form>
         <p>Already have an account? <a href="login.php">Login</a></p>
     </div>
 </body>

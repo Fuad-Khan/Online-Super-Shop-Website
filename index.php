@@ -1,7 +1,11 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+// Rest of your code...
 session_start(); // Start the session
 // Database connection
 include('includes/db_connection.php');
+
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
