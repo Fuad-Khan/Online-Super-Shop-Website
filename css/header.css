@@ -1,129 +1,134 @@
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    
-}
-/* Header */
+/* Mobile First Approach */
 header {
-    
-    background: linear-gradient(to right, #9136f3, #2575fc);
+    background: linear-gradient(to right, #4e5ab7, #ff7f50);
     color: white;
-    padding: 20px 5%;
+    padding: 15px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 3px solid #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
     position: relative;
-    flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    width: 100%; /* Ensures header spans the full width */
-    transition: all 0.3s ease; /* Smooth transition */
 }
 
-/* Logo */
-header .logo h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: white;
+.logo h1 {
+    font-size: 1.8rem;
     margin: 0;
-    text-align: center;
-    flex: 1 1 100%; /* Full width on smaller screens */
-    transition: transform 0.3s ease; /* Smooth hover effect */
 }
 
-/* Logo Hover Effect */
-header .logo h1:hover {
-    transform: scale(1.1);
+.logo h1 a {
+    text-decoration: none;
+    color: white;
 }
 
-/* Remove underline from the logo link */
-header .logo h1 a {
-    text-decoration: none; /* Removes underline from the logo */
-    color: white; /* Ensures the logo link is white */
+/* Mobile Menu Button (Hidden on Desktop) */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
 }
 
 /* Navigation */
-nav {
+.nav-menu {
     display: flex;
-    gap: 20px;
-    flex: 1; /* Ensures the nav takes up appropriate space */
-    justify-content: flex-end; /* Aligns items to the right */
-    flex-wrap: wrap; /* Allows wrapping for narrow screens */
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(to right, #4e5ab7, #ff7f50);
+    z-index: 1000;
 }
 
-nav a {
+.nav-menu.active {
+    max-height: 500px; /* Adjust based on content */
+    padding: 15px 0;
+}
+
+.nav-menu a {
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
     background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.nav-menu a i {
+    margin-right: 10px;
+    width: 20px;
     text-align: center;
 }
 
-/* Navigation Hover Effect */
-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.4);
-    transform: scale(1.05);
+/* Hide text on mobile, show icons */
+.nav-text {
+    display: inline;
 }
 
-/* Focus Outline for Navigation Links */
-nav a:focus {
-    outline: 2px solid #fff;
-    outline-offset: 3px;
+/* Desktop Styles */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+    
+    .nav-menu {
+        position: static;
+        flex-direction: row;
+        max-height: none;
+        width: auto;
+        background: transparent;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+    
+    .nav-menu a {
+        padding: 10px 15px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .nav-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+    }
 }
 
-/* Responsive Design */
+/* Tablet Styles */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Stack logo and navigation vertically */
-        padding: 15px 5%;
-        text-align: center; /* Ensures header items are centered */
-    }
-
-    header .logo h1 {
-        font-size: 2rem; /* Smaller font size for smaller screens */
-    }
-
-    nav {
-        justify-content: center; /* Center navigation links on smaller screens */
-        gap: 15px; /* Slightly reduced gap */
-    }
-
-    nav a {
-        padding: 8px 15px; /* Adjust padding for smaller links */
-        font-size: 0.9rem; /* Smaller font size */
+    .logo h1 {
+        font-size: 1.5rem;
     }
 }
 
+/* Small Phone Optimization */
 @media (max-width: 480px) {
     header {
         padding: 10px 5%;
     }
-
-    header .logo h1 {
-        font-size: 1.8rem; /* Further reduce font size */
+    
+    .menu-toggle {
+        display: block;
     }
-
-    nav {
-        flex-direction: column; /* Stack links vertically */
-        gap: 10px;
-        width: 100%; /* Ensure the navigation is full width */
-        align-items: center; /* Center the items in the column layout */
+    
+    .nav-menu a {
+        padding: 10px 15px;
     }
-
-    nav a {
-        padding: 10px; /* Compact padding for very small screens */
-        font-size: 0.85rem;
+    
+    /* Optional: Show only icons on very small screens */
+    /*
+    .nav-text {
+        display: none;
     }
+    */
 }

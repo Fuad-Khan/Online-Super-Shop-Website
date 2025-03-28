@@ -1,84 +1,114 @@
-/* General styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
+/* General Page Styles */
 body {
-    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    background: url('../images/—Pngtree—shopping mall supermarket selection merchandise_1048684.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
 }
 
+/* Register Section */
 .register-container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    border-radius: 12px;
     text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 380px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
 }
 
+/* Form Styling */
 h2 {
-    color: #333;
+    color: #ff6b6b;
     margin-bottom: 20px;
+    font-size: 26px;
 }
 
-input {
+/* Input Fields */
+input, textarea {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
+    padding: 12px;
+    font-size: 16px;
+    background: transparent;
+    border: 2px solid #ff6b6b;
+    border-radius: 5px;
+    outline: none;
+    color: #333;
+    margin-bottom: 15px;
+    transition: 0.3s;
 }
 
-input[type="password"] {
-    font-family: Arial, sans-serif;
+input:focus, textarea:focus {
+    border-color: #e65c5c;
 }
 
+textarea {
+    height: 80px;
+    resize: none;
+}
+
+/* Buttons */
 button {
     width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
+    padding: 12px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #ff6b6b, #ffa07a);
+    color: #fff;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: 0.3s;
 }
 
 button:hover {
-    background-color: #218838;
+    background: linear-gradient(to right, #e65c5c, #ff8c66);
 }
 
-p {
+/* Error Message */
+.error-message {
+    color: #ff4444;
+    background: rgba(255, 68, 68, 0.2);
+    padding: 10px;
+    border-radius: 5px;
     margin-top: 10px;
     font-size: 14px;
 }
 
-a {
-    text-decoration: none;
-    color: #007bff;
+/* Login Link */
+p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
 }
 
-a:hover {
+p a {
+    color: #ff6b6b;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+p a:hover {
     text-decoration: underline;
 }
 
-/* Error message styling */
-.error-message {
-    background-color: #ffcccc;
-    color: #d8000c;
-    border: 1px solid #d8000c;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: bold;
+/* Responsive Design */
+@media (max-width: 600px) {
+    .register-container {
+        width: 90%;
+        padding: 30px;
+    }
+    
+    input, textarea {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
 }

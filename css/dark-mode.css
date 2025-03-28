@@ -1,0 +1,38 @@
+:root {
+    --primary-bg: #ffffff;
+    --primary-text: #333333;
+    --header-bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+    --link-color: #007bff;
+  }
+  
+  .dark-mode {
+    --primary-bg: #1a1a1a;
+    --primary-text: #e0e0e0;
+    --header-bg: #2d2d2d;
+    --card-bg: #252525;
+    --border-color: #404040;
+    --link-color: #4dabf7;
+  }
+  
+  body {
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .header {
+    background-color: var(--header-bg);
+  }
+  
+  .product-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+  }
+  
+  a {
+    color: var(--link-color);
+  }
+  
+  /* Add other element-specific styles as needed */

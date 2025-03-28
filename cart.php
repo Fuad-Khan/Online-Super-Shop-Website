@@ -116,6 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             <h3>Total Price: <?= number_format($total_price, 2) ?> Taka</h3>
             <a href="checkout.php" class="checkout-btn">Proceed to Checkout</a>
+
         <?php endif; ?>
     </div>
 

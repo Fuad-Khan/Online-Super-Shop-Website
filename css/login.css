@@ -1,101 +1,154 @@
-/* Global Styles */
+/* General Page Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url('../images/—Pngtree—shopping mall supermarket selection merchandise_1048684.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
 
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
 
-.login-container {
-    background-color: #fff;
-    width: 350px;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
-.login-header h2 {
+/* Login Section */
+section {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    border-radius: 12px;
     text-align: center;
-    color: #333;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 360px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Form Styling */
+h1 {
+    color: #ff6b6b;
     margin-bottom: 20px;
+    font-size: 26px;
 }
 
-.input-group {
-    margin-bottom: 15px;
-}
-
-.input-group input {
+/* Input Fields */
+.inputbox {
+    position: relative;
     width: 100%;
-    padding: 10px;
+    margin: 20px 0;
+}
+
+.inputbox input {
+    width: 100%;
+    padding: 12px;
     font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.input-group input:focus {
-    border-color: #4CAF50;
-    outline: none;
-}
-
-.button-group {
-    display: flex;
-    justify-content: center;
-}
-
-.button-group button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: #fff;
+    background: transparent;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+    outline: none;
+    color: #333;
+    border-bottom: 2px solid #ff6b6b;
+    transition: 0.3s;
 }
 
-.button-group button:hover {
-    background-color: #45a049;
-}
-
-.login-footer {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.login-footer p {
-    font-size: 14px;
+.inputbox label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
     color: #777;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
 }
 
-.login-footer a {
-    color: #4CAF50;
+/* Move label up when input is focused or has text */
+.inputbox input:focus + label,
+.inputbox input:not(:placeholder-shown) + label {
+    top: 5px;
+    font-size: 12px;
+    color: #ff6b6b;
+}
+
+/* Icon Styling */
+.inputbox ion-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff6b6b;
+}
+
+/* Remember Me & Forgot Password */
+.forget {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.forget a {
+    color: #ff6b6b;
     text-decoration: none;
+    transition: 0.3s;
 }
 
-.login-footer a:hover {
+.forget a:hover {
     text-decoration: underline;
 }
 
-/* Error message style */
-.error-message {
-    background-color: #ffcccc;
-    color: #d8000c;
-    border: 1px solid #d8000c;
-    padding: 10px;
-    margin-bottom: 20px;
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
     border-radius: 5px;
-    text-align: center;
+    background: linear-gradient(to right, #ff6b6b, #ffa07a);
+    color: #fff;
+    font-size: 16px;
     font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(to right, #e65c5c, #ff8c66);
+}
+
+/* Back to Home Button */
+.btn-home {
+    margin-top: 10px;
+    background: transparent;
+    color: #ff6b6b;
+    border: 2px solid #ff6b6b;
+    transition: 0.3s;
+}
+
+.btn-home:hover {
+    background: #ff6b6b;
+    color: #fff;
+}
+
+/* Error Message */
+.error-message {
+    color: #ff4444;
+    background: rgba(255, 68, 68, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    section {
+        width: 90%;
+        padding: 30px;
+    }
+    
+    .inputbox input {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
 }

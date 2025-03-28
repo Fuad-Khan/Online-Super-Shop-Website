@@ -36,38 +36,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="login-container">
-            <div class="login-header">
-                <h2>Login</h2>
+    <section>
+        <form method="POST" action="">
+            <h1>Login</h1>
+            <div class="inputbox">
+                <ion-icon name="mail-outline"></ion-icon>
+                <input type="email" name="email" required placeholder=" ">
+                <label>Email</label>
             </div>
-            <div class="login-body">
-                <form method="POST" action="">
-                    <div class="input-group">
-                        <input type="email" name="email" placeholder="Email" required>
-                    </div>
-                    <div class="input-group">
-                        <input type="password" name="password" placeholder="Password" required>
-                    </div>
-                    <div class="button-group">
-                        <button type="submit">Login</button>
-                    </div>
-                </form>
+
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="password" name="password" required placeholder=" ">
+                <label>Password</label>
             </div>
-            <div class="login-footer">
+
+            <div class="forget">
+                <label><input type="checkbox"> Remember Me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+
+            <button type="submit">Log in</button>
+
+            <div class="register">
                 <p>Don't have an account? <a href="register.php">Register</a></p>
             </div>
-            <?php if (!empty($error_message)): ?>
-            <div class="error-message">
-                <?php echo $error_message; ?>
-            </div>
-        <?php endif; ?>
-        </div>
 
-    </div>
-
+            <?php if (!empty($_SESSION['error'])): ?>
+                <div class="error-message">
+                    <?php echo $_SESSION['error']; unset($_SESSION['error']); ?>
+                </div>
+            <?php endif; ?>
+        </form>
+        <button class="btn-home" onclick="window.location.href='index.php';">Back to Home</button>
+    </section>
 </body>
 </html>
-
