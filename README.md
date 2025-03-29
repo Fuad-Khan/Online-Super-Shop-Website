@@ -17,7 +17,7 @@ Welcome to the **Online Super Shop Website** project! This is a fully functional
 This web app provides a smooth and intuitive shopping experience with:
 - **Product catalog** featuring various categories.
 - **User authentication** for secure login and registration.
-- **Admin dashboard** for managing products and orders.
+<!-- - **Admin dashboard** for managing products and orders. -->
 
 ## Table of Contents
 - [Features](#features)
@@ -33,7 +33,7 @@ This web app provides a smooth and intuitive shopping experience with:
 - **Shopping Cart**: Add, update, or remove items from the cart.
 - **Order Management**: Users can view their order history and manage ongoing orders.
 - **Payment Integration**: Easily pay for orders with a simulated payment gateway.
-- **Admin Panel**: Admin users can manage products, view orders, and handle users.
+<!-- - **Admin Panel**: Admin users can manage products, view orders, and handle users. -->
 
 ## Tech Stack
 This project is built using the following technologies:
