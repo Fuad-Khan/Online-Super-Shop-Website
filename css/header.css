@@ -109,6 +109,15 @@ header {
     .logo h1 {
         font-size: 1.5rem;
     }
+
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-menu a {
+        padding: 10px 15px;
+    }
+    
 }
 
 /* Small Phone Optimization */

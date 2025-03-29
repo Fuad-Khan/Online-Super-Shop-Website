@@ -40,7 +40,7 @@
   .search-bar-container {
     width: 90%;
     max-width: 1200px;
-    margin: 2rem auto;
+    margin: 1rem auto;
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
@@ -98,7 +98,7 @@
   /* Products Grid */
   /* ---------------------------- */
   #products {
-    padding: 3rem 5%;
+    padding: 1rem 5%;
     max-width: 100%;
     margin: 0 auto;
   }

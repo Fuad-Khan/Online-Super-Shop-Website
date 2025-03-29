@@ -148,9 +148,7 @@ footer p {
 }
 
 @media (max-width: 480px) {
-    body {
-        padding-top: 20px;
-    }
+   
 
     #about-us, #contact {
         padding: 15px;
